@@ -5,7 +5,9 @@
 <script src="~/js/signalr/dist/browser/signalr.js" type="text/javascript"></script>
 <script>
     (function setupConnection() {
+
         var connection = new signalR.HubConnectionBuilder().withUrl("/orderHub").build();
+
         connection.on("lastOrder", function (order) {
 
             var newOrderNode = document.createElement("div");
